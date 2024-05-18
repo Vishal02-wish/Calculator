@@ -1,7 +1,7 @@
 const calculator = document.querySelector("#calculator");
 const display = calculator.querySelector(".display");
 const buttons = calculator.querySelectorAll("button");
-const maxDisplayLength = 15;  // Maximum characters the display can hold
+const maxDisplayLength = 15;  
 
 buttons.forEach(button => {
   button.addEventListener("click", function() {
@@ -16,7 +16,7 @@ buttons.forEach(button => {
       try {
         display.textContent = eval(text);
       } catch (e) {
-        display.textContent = "Error"; // Handle errors from eval
+        display.textContent = "Error"; 
       }
     } else if (value === "+/-") {
       display.textContent = text.startsWith("-") ? text.substring(1) : `-${text}`;
@@ -25,7 +25,7 @@ buttons.forEach(button => {
         display.textContent = value;
       } else if (text.length < maxDisplayLength) {
         display.textContent = text + value;
-      } // No else part, ignore inputs if max length reached
+      } 
     }
   });
 });
